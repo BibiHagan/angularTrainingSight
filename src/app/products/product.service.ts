@@ -1,6 +1,6 @@
 import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { IProduct } from "Angular-GettingStarted/APM-Final/src/app/products/product";
+import { IProduct } from "./product";
 import { Observable, throwError } from "rxjs";
 import { catchError, tap } from "rxjs/operators";
 
@@ -23,7 +23,7 @@ export class ProductService {
     private handleError(err: HttpErrorResponse){
         let errorMessage = '';
         if (err.error instanceof ErrorEvent){
-            errorMessage = `An error occured: ${err.error.message}`
+            errorMessage = `An error occurred: ${err.error.message}`
         } else {
             errorMessage = `Server returned code: ${err.status}, error message is: ${err.message}`;
         }
